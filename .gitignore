@@ -1,0 +1,59 @@
+import random
+userscore = 0
+pcscore = 0
+while userscore < 3 and pcscore < 3:
+    pc = ("pedra","papel","tesoura","lagarto","spock")
+    y = random.choice(pc)
+    x = input("pedra, papel, tesoura, lagarto ou spock?")
+    print("usuario", x)
+    print("pc", y)
+    if (x == "pedra") and (y == "lagarto" or y == "tesoura"):
+       userscore += 1
+       pcscore = 0
+       print("voce ganhou!")
+    elif (x == "pedra") and (y == "spock" or y == "papel"):
+        pcscore += 1
+        userscore = 0
+        print("pc ganhou!")     
+    elif (x == "papel") and (y == "pedra" or y == "spock"):
+        userscore += 1 
+        pcscore = 0
+        print("voce ganhou!")    
+    elif (x == "papel") and (y == "tesoura" or y == "lagarto"):
+        pcscore += 1
+        userscore = 0
+        print("pc ganhou!")   
+    elif (x == "tesoura") and (y == "papel" or y == "lagarto"):
+        userscore += 1
+        pcscore = 0
+        print("voce ganhou!")
+    elif (x == "tesoura") and (y == "spock" or y =="pedra"):
+        pcscore += 1
+        userscore = 0
+        print("pc ganhou!")
+    elif (x == "lagarto") and (y == "spock" or y =="papel"):
+       userscore += 1
+       pcscore = 0
+       print("voce ganhou!")
+    elif (x == "lagarto") and (y == "tesoura" or y == "pedra"):
+       pcscore += 1
+       userscore = 0
+       print("pc ganhou!")
+    elif (x == "spock") and (y == "tesoura" or y == "pedra"):
+       userscore += 1
+       pcscore = 0
+       print("voce ganhou!")
+    elif (x == "spock") and (y == "lagarto" or y == "papel"):
+       pcscore += 1
+       userscore = 0
+       print("pc ganhou!")
+   
+    else:
+       if x == y:
+           print("empate!")
+       else:
+           print("digite uma palavra valida!")
+if userscore == 3:
+    print("voce venceu a partida!")
+elif pcscore == 3:
+    print("pc venceu a partida. voce perdeu!")         
